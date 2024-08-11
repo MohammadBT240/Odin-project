@@ -3,18 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock paper scissors</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <p>
-      There is nothing to view here because this game is played in the console.
-      <br />
-      If you wish to see the result of the game click (ctrl + shift + J) on
-      windows or (Cmd + Option + J) on mac if you see an error just refresh the
-      page GOOD LUCK!
-    </p>
+    <div id="game">
+      <button id="rock" class="danger">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+    </div>
+    <div class="reset">
+      <button id="reset" class="danger">Reset</button>
+    </div>
+    <div id="results">
+      <p id="roundResult"></p>
+      <p id="score">Score: You 0 - Computer 0</p>
+      <p id="winner"></p>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
