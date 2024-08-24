@@ -43,8 +43,35 @@ function capitalize(str) {
   const chStr = (str) => {};
   //   return str.charAt(0).toUpperCase() + str;
 }
+console.log(jonas);
+const copyJonas = { ...jonas };
+delete copyJonas.lastName;
+console.log(copyJonas);
+
 console.log(add7(7));
 console.log(multiply("7", 4));
+
+// let key = prompt("What do you want to know about the user?", "name");
+
+// access by variable
+// alert(copyJonas[key]); // John (if enter "name")
+
+// //square brackets
+
+// //square brackets
+// let fruit = "apple";
+// let bag = {
+//   [fruit + "Computer"]: 5,
+// };
+// console.log(bag);
+
+// //computed property
+// let fruit = prompt("What is the name of the fruit you bought?", "apple");
+// const bag = {
+//   [fruit]: 5,
+// };
+// alert(bag.strawberry);
+
 // console.log(capitalize("mohammad BASHIR tuKur"));
 
 /*function trial() {
