@@ -1,55 +1,105 @@
-const jonas = {
-  firstName: "Mohammad",
-  lastName: "Tukur",
-  birthYear: 2003,
-  job: "FreeLancer",
-  friends: ["Usman", "Kasim", "Ahmad"],
-  hasDriversLicense: true,
+////// TASKS //////
 
-  // calcAge: function (birthYear) {
-  //    return 2023 - birthYear;
-  // }
+/*
+ 1 
+Write the function camelize(str) that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.
 
-  // calcAge: function () {
-  //    console.log(this);
-  //    return 2023 - this.birthYear;
-  // }
-
-  calcAge: function () {
-    this.age = 2023 - this.birthYear;
-    return this.age;
-  },
-
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, 
-       and he has ${
-         this.hasDriversLicense ? "a Drivers License" : "NO Drivers License"
-       }`;
-  },
-};
-const summ = document.querySelector("p[class='summary']");
-// console.log(jonas.getSummary());
-summ.textContent = jonas.getSummary();
-
-function add7(num) {
-  return Number(num) + 7;
+That is: removes all dashes, each word after dash becomes uppercased.
+*/
+function camelize(str) {
+  return str.split("-").join("");
 }
 
-function multiply(num1, num2) {
-  return Number(num1) * Number(num2);
+console.log(camelize("list-style-image"));
+console.log(camelize("-webkit-transition"));
+
+/*
+ 2
+Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
+
+The function should not modify the array. It should return the new array.
+*/
+function filterRange(arr, a, b) {
+  return arr.filter((val) => {
+    return val >= a && val <= b;
+  });
 }
 
-function capitalize(str) {
-  const chStr = (str) => {};
-  //   return str.charAt(0).toUpperCase() + str;
-}
-console.log(jonas);
-const copyJonas = { ...jonas };
-delete copyJonas.lastName;
-console.log(copyJonas);
+let arr = [5, 3, 8, 1];
 
-console.log(add7(7));
-console.log(multiply("7", 4));
+console.log(filterRange(arr, 1, 4));
+
+/*
+ 3
+Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+
+The function should only modify the array. It should not return anything.
+*/
+
+function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++) {
+    let val = arr[i];
+    if (val < a || val > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+}
+
+console.log(filterRangeInPlace(arr, 1, 4));
+
+// const jonas = {
+//   firstName: "Mohammad",
+//   lastName: "Tukur",
+//   birthYear: 2003,
+//   job: "FreeLancer",
+//   friends: ["Usman", "Kasim", "Ahmad"],
+//   hasDriversLicense: true,
+
+//   // calcAge: function (birthYear) {
+//   //    return 2023 - birthYear;
+//   // }
+
+//   // calcAge: function () {
+//   //    console.log(this);
+//   //    return 2023 - this.birthYear;
+//   // }
+
+//   calcAge: function () {
+//     this.age = 2023 - this.birthYear;
+//     return this.age;
+//   },
+
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job},
+//        and he has ${
+//          this.hasDriversLicense ? "a Drivers License" : "NO Drivers License"
+//        }`;
+//   },
+// };
+// const summ = document.querySelector("p[class='summary']");
+// // console.log(jonas.getSummary());
+// summ.textContent = jonas.getSummary();
+
+// function add7(num) {
+//   return Number(num) + 7;
+// }
+
+// function multiply(num1, num2) {
+//   return Number(num1) * Number(num2);
+// }
+
+// function capitalize(str) {
+//   const chStr = (str) => {};
+//   //   return str.charAt(0).toUpperCase() + str;
+// }
+// console.log(jonas);
+// const copyJonas = { ...jonas };
+// delete copyJonas.lastName;
+// console.log(copyJonas);
+
+// console.log(add7(7));
+// console.log(multiply("7", 4));
 
 // let key = prompt("What do you want to know about the user?", "name");
 
