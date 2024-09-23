@@ -1,0 +1,5 @@
+# Ignore node_modules
+/restaurant-page/node_modules/
+
+# Ignore build files
+/restaurant-page/dist/
