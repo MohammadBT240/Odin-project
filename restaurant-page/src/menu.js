@@ -1,10 +1,13 @@
-const itemsPerPage = 5; // Number of items per page
+const itemsPerPage = 4; // Number of items per page
 let currentPage = 1; // Track the current page
 let items = []; // Store fetched menu items
 
 export async function loadMenu() {
   const content = document.getElementById("content");
   content.textContent = ""; // Clear existing content
+
+  const loader = "Loading...";
+  let isLoading = false;
 
   const headline = document.createElement("h1");
   headline.textContent = "Our Menu";
@@ -29,10 +32,12 @@ export async function loadMenu() {
   try {
     const response = await fetch(api_url);
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error(
+        `Network response was not ok. A ${response.status} status`
+      );
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     items = data.meals || []; // Store meals from the response
 
     if (items.length > 0) {
