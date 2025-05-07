@@ -1,0 +1,32 @@
+.translateX {
+  transform: translateX(20px);
+}
+
+.translateY {
+  /* percent values are of the element's width */
+  transform: translateY(-33%);
+}
+
+.translateXY {
+  transform: translate(20px, -33%);
+}
+
+body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  border: 1px solid black;
+  margin-right: auto;
+  padding: 24px;
+}
+
+p {
+  margin: 12px 0 24px;
+}
+
+img {
+  width: 60px;
+}
