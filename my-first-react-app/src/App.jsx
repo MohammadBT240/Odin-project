@@ -8,25 +8,41 @@ function ListItem(props) {
 }
 
 function List(props) {
-  if (!props.animalsList) {
-    return <div>Loading...</div>;
-  }
-
-  if (props.animalsList.length === 0) {
-    return <div>There are no animals in the list!</div>;
-  }
-
+  // return (
+  //   <>
+  //     {!props.animalsList ? (
+  //       <div>Loading...</div>
+  //     ) : props.animalsList.length > 0 ? (
+  //       <ul>
+  //         {props.animalsList.map((animal) => {
+  //           return <li key={animal}>{animal}</li>;
+  //         })}
+  //       </ul>
+  //     ) : (
+  //       <div>There are no animals in the list</div>
+  //     )}
+  //   </>
+  // );
+  // OR
   return (
-    <ul>
-      {props.animalsList.map((animal) => {
-        return <li key={animal}>{animal}</li>;
-      })}
-    </ul>
+    <>
+      {!props.animalsList && <div>Loading...</div>}
+      {props.animalsList && props.animalsList.length > 0 && (
+        <ul>
+          {props.animalsList.map((animal) => {
+            return <li key={animal}>{animal}</li>;
+          })}
+        </ul>
+      )}
+      {props.animalsList && props.animalsList.length === 0 && (
+        <div>There are no animals in the list!</div>
+      )}
+    </>
   );
 }
 function App() {
-  // const animals = ["Lion", "Cow", "Snake", "Lizard"];
-  const animals = [];
+  const animals = ["Lion", "Cow", "Snake", "Lizard"];
+  // const animals = [];
 
   return (
     <>
