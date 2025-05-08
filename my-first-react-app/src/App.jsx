@@ -77,6 +77,7 @@ function List(props) {
 }
 function App() {
   const [animalsView, setAnimalsView] = useState(false);
+  const [todosView, setTodosView] = useState(false);
 
   const animals = ["Lion", "Cow", "Snake", "Lizard"];
   // const animals = [];
@@ -95,7 +96,12 @@ function App() {
           fontSize={12}
           onClick={() => setAnimalsView((view) => !view)}
         />
-        <Button text="View Todos!" color="red" fontSize={12} />
+        <Button
+          text={todosView ? "Hide Todos" : "View Todos!"}
+          color="red"
+          fontSize={12}
+          onClick={() => setTodosView((view) => !view)}
+        />
       </div>
       <div>
         <h1>Animals: </h1>
@@ -103,7 +109,7 @@ function App() {
       </div>
       <div>
         <h1>TODO List</h1>
-        <List todoList={todos} listType={"todos"} />
+        {todosView && <List todoList={todos} listType={"todos"} />}
       </div>
     </>
   );
