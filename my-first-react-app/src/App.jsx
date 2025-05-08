@@ -7,6 +7,19 @@ function ListItem(props) {
   return <li>{props.animal}</li>;
 }
 
+function Button(props) {
+  const buttonStyle = {
+    color: props.color,
+    fontSize: props.fontSize + "px",
+  };
+
+  return (
+    <button style={buttonStyle} onClick={props.onClick}>
+      {props.text}
+    </button>
+  );
+}
+
 function List(props) {
   // return (
   //   <>
@@ -63,6 +76,8 @@ function List(props) {
   }
 }
 function App() {
+  const [animalsView, setAnimalsView] = useState(false);
+
   const animals = ["Lion", "Cow", "Snake", "Lizard"];
   // const animals = [];
   const todos = [
@@ -74,8 +89,17 @@ function App() {
   return (
     <>
       <div>
+        <Button
+          text={animalsView ? "Hide Animals" : "View Animals!"}
+          color="blue"
+          fontSize={12}
+          onClick={() => setAnimalsView((view) => !view)}
+        />
+        <Button text="View Todos!" color="red" fontSize={12} />
+      </div>
+      <div>
         <h1>Animals: </h1>
-        <List animalsList={animals} listType={"animals"} />
+        {animalsView && <List animalsList={animals} listType={"animals"} />}
       </div>
       <div>
         <h1>TODO List</h1>
