@@ -1,0 +1,10 @@
+# Ignore node_modules
+/restaurant-page/node_modules/
+/todo-app/node_modules/
+/weather-app/node_modules/
+/Tests/node_modules/
+
+# Ignore build files
+/restaurant-page/dist/
+/todo-app/dist/
+/weather-app/dist/
