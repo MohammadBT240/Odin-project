@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,400;0,700;0,900;1,100;1,300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/admin-dashboard.css" />
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>
+          <svg alt="">
+            <use href="./images/sidebar/view-dashboard.svg"></use></svg
+          >Dashboard
+        </h2>
+        <ul>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/home.svg"></use></svg
+            ><a href="#">Home</a>
+          </li>
+
+          <li>
+            <svg alt="">
+              <use
+                href="./images/sidebar/card-account-details-outline.svg"
+              ></use></svg
+            ><a href="#">Profile</a>
+          </li>
+          <li>
+            <svg
+              id="message"
+              width="auto"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"
+              /></svg
+            ><a href="#">Messages</a>
+          </li>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/clock-time-three.svg"></use></svg
+            ><a href="#">History</a>
+          </li>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/note-multiple.svg"></use></svg
+            ><a href="#">Tasks</a>
+          </li>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/account-group.svg"></use></svg
+            ><a href="#">Communities</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/cog.svg"></use></svg
+            ><a href="#">Settings</a>
+          </li>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/help-box.svg"></use></svg
+            ><a href="#">Support</a>
+          </li>
+          <li>
+            <svg alt="">
+              <use href="./images/sidebar/shield-check.svg"></use></svg
+            ><a href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-container">
+        <div class="header">
+          <div class="search-items">
+            <svg alt="">
+              <use href="./images/header/magnify.svg"></use>
+            </svg>
+            <input type="search" name="search-bar" id="search-bar" />
+          </div>
+          <div class="notif">
+            <svg
+              id="bell"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10,21H14A2,2 0 0,1 12,23A2,2 0 0,1 10,21M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M17,11A5,5 0 0,0 12,6A5,5 0 0,0 7,11V18H17V11M19.75,3.19L18.33,4.61C20.04,6.3 21,8.6 21,11H23C23,8.07 21.84,5.25 19.75,3.19M1,11H3C3,8.6 3.96,6.3 5.67,4.61L4.25,3.19C2.16,5.25 1,8.07 1,11Z"
+              />
+            </svg>
+            <img src="./images/animals/rabbit.png" alt="" />
+            <p>Mohammad Bashir</p>
+          </div>
+          <div class="profile-icon-large">
+            <img src="./images/animals/rabbit.png" alt="" />
+            <div class="hello-text">
+              <p>Hi there,</p>
+              <h2>Mohammad Bashir(@mohammad)</h2>
+            </div>
+          </div>
+          <div class="header-links">
+            <button type="button">New</button>
+            <button type="button">Upload</button>
+            <button type="button">Share</button>
+          </div>
+        </div>
+
+        <div class="main-content">
+          <div class="projects">
+            <h3>Your Projects</h3>
+            <div class="project">
+              <div class="project-text">
+                <p>Super Cool Project</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  culpa, asperiores neque atque blanditiis voluptate nostrum
+                </p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-text">
+                <p>Less Cool Project</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  nulla hic repudiandae quisquam accusamus vitae dolor iusto
+                  provident fuga.
+                </p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-text">
+                <p>Impossible App</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-text">
+                <p>Easy Peesy App</p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Neque, vel.
+                </p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-text">
+                <p>Ad Blocker</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quasi, ipsum harum! Nostrum vero vitae necessitatibus ipsum?
+                </p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-text">
+                <p>Money Maker</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Itaque, sapiente.
+                </p>
+              </div>
+              <div class="project-icons">
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/star-plus-outline.svg"
+                  ></use>
+                </svg>
+                <svg alt="">
+                  <use href="./images/projects/eye-plus-outline.svg"></use>
+                </svg>
+                <svg alt="">
+                  <use
+                    xlink:href="./images/projects/share-variant-outline.svg"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-sidebar">
+            <h3>Announcements</h3>
+            <div class="announcements">
+              <div class="announcement">
+                <h4>Site Maintenance</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <hr />
+              </div>
+              <div class="announcement">
+                <h4>Community Share Day</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <hr />
+              </div>
+              <div class="announcement">
+                <h4>Updated Privacy Policy</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <h3>Trending</h3>
+            <div class="trending">
+              <div class="trending-user">
+                <img src="./images/animals/cat.png" alt="" />
+                <div class="trending-text">
+                  <p class="username">@alhamdu</p>
+                  <p>World gnome Builder</p>
+                </div>
+              </div>
+              <div class="trending-user">
+                <img src="./images/animals/chicken.png" alt="" />
+                <div class="trending-text">
+                  <p class="username">@mohammad</p>
+                  <p>Super cool Project</p>
+                </div>
+              </div>
+              <div class="trending-user">
+                <img src="./images/animals/jaguar.png" alt="" />
+                <div class="trending-text">
+                  <p class="user-">@victor</p>
+                  <p>Fitness Changing App</p>
+                </div>
+              </div>
+              <div class="trending-user">
+                <img src="./images/animals/panda.png" alt="" />
+                <div class="trending-text">
+                  <p class="username">@imtisal</p>
+                  <p>No traffic maker</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

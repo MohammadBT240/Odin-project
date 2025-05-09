@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form validation: Task 1</title>
+    <link rel="stylesheet" href="./css/form-validation2.css" />
+  </head>
+
+  <body>
+    <form id="secValForm">
+      <h2>Enter your support query (Validation 2)</h2>
+      <ul>
+        <li>
+          <label for="uname">User name:</label>
+          <input type="text" name="uname" id="uname" required />
+          <span class="error-message" id="usernameError"></span>
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input type="email" name="email" id="email" required />
+          <span class="error-message" id="emailError"></span>
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="number" name="phone" id="phone" required />
+          <span class="error-message" id="phoneError"></span>
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" required> </textarea>
+          <span class="error-message" id="commentError"></span>
+        </li>
+        <li>
+          <button type="submit" name="submit">Submit comment</button>
+        </li>
+      </ul>
+    </form>
+    <script>
+      document
+        .getElementById("secValForm")
+        .addEventListener("submit", function (e) {
+          // e.preventDefault();
+          let isValid = true;
+
+          // Username validation
+          const username = document.getElementById("uname").value;
+          const usernamePattern = /^[a-z]\.[a-z0-9]{3,}$/;
+          if (usernamePattern.test(username)) {
+            document.getElementById("usernameError").textContent =
+              "Username must be a single letter, followed by a dot, followed by three or more letters or numbers (lowercase only).";
+            isValid = false;
+          } else {
+            document.getElementById("usernameError").textContent = "";
+          }
+
+          // Email validation
+          const email = document.getElementById("email").value;
+          const emailPattern = /^[a-zA-Z0-9]+@bigcorp\.eu$/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent =
+              'Email must be one or more letters or numbers, followed by "@bigcorp.eu".';
+            isValid = false;
+          } else {
+            document.getElementById("emailError").textContent = "";
+          }
+
+          // Phone validation
+          const phone = document.getElementById("phone").value;
+          const phonePattern = /^\d{10}|\d{3}[\s.-]?\d{3}[\s.-]?\d{4}$/;
+          if (!phonePattern.test(phone)) {
+            document.getElementById("phoneError").textContent =
+              "Phone number must be 10 digits, or in the format 123-456-7890, 123 456 7890, or 123.456.7890.";
+            isValid = false;
+          } else {
+            document.getElementById("phoneError").textContent = "";
+          }
+
+          // Prevent form submission if any field is invalid
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>

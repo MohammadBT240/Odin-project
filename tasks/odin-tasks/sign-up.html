@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./css/sign-up.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img src="./images/plant-bg.jpg" alt="Background Image" />
+        <div class="logo">
+          <img src="./images/odin-lined.png" alt="Background Image" />
+          <h1 style="font-family: 'Norse Bold'">ODIN</h1>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="content">
+          <div class="top-content">
+            <h5 class="note">
+              This is not a real online service! You know you need something
+              like this in your life to help you realize your deepest dreams.
+              Sign up
+              <strong>now</strong> to get started.
+            </h5>
+            <h5 class="note">You <i>know</i> you want to.</h5>
+          </div>
+          <div class="middle-content">
+            <form>
+              <div class="form-sections">
+                <div class="left-form">
+                  <h2 class="form-heading">Let's do this!</h2>
+                  <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      class=""
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                    <span class="error-message" style="display: none"
+                      >* Passwords do not match</span
+                    >
+                  </div>
+                </div>
+                <div class="right-form">
+                  <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input
+                      type="number"
+                      id="phone-number"
+                      name="phone-number"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input
+                      class=""
+                      type="password"
+                      id="confirm-password"
+                      name="confirm-password"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <button type="submit" name="submit">Create Account</button>
+            </form>
+          </div>
+          <div class="bottom-content">
+            <p class="login-link">
+              Already have an account? <a href="#">Log in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("displayed");
+        const form = document.querySelector("form");
+        const firstNameInput = document.getElementById("first-name");
+        const lastNameInput = document.getElementById("last-name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone-number");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput =
+          document.getElementById("confirm-password");
+        const errorMessage = document.querySelector(".error-message");
+
+        form.addEventListener("submit", function (event) {
+          let isValid = true;
+
+          // Validate first name
+          const firstNamePattern = /^[a-z]\.[a-z0-9]{3,}$/;
+          if (!firstNamePattern.test(firstNameInput.value)) {
+            firstNameInput.classList.add("error");
+            isValid = false;
+          } else {
+            firstNameInput.classList.remove("error");
+          }
+
+          // Validate last name (assuming same pattern as first name)
+          if (!firstNamePattern.test(lastNameInput.value)) {
+            lastNameInput.classList.add("error");
+            isValid = false;
+          } else {
+            lastNameInput.classList.remove("error");
+          }
+
+          // Validate email
+          const emailPattern = /^[a-zA-Z0-9]+@bigcorp\.eu$/;
+          if (!emailPattern.test(emailInput.value)) {
+            emailInput.classList.add("error");
+            isValid = false;
+          } else {
+            emailInput.classList.remove("error");
+          }
+
+          // Validate phone number
+          const phonePattern = /^(\d{10}|(\d{3}[-.\s]\d{3}[-.\s]\d{4}))$/;
+          if (!phonePattern.test(phoneInput.value)) {
+            phoneInput.classList.add("error");
+            isValid = false;
+          } else {
+            phoneInput.classList.remove("error");
+          }
+
+          // Validate passwords
+          if (passwordInput.value !== confirmPasswordInput.value) {
+            errorMessage.style.display = "block";
+            passwordInput.classList.add("error");
+            confirmPasswordInput.classList.add("error");
+            isValid = false;
+            console.log(passwordInput.classList);
+          } else {
+            errorMessage.style.display = "none";
+            passwordInput.classList.remove("error");
+            confirmPasswordInput.classList.remove("error");
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
